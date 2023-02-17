@@ -1,0 +1,100 @@
+.deco
+{
+
+    background-color: transparent;
+    display: flex;
+    position: absolute;
+    min-width: 100vh;
+    /* border: 5px solid rgb(207, 29, 29); */
+    border-top: none;
+    border-left: none;
+    top: 44%;
+    left: 25%;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 100px;
+    /* text-shadow: 0 2px 15px rgb(0, 0, 3); */
+    /* box-shadow: 0 5px 15px rgb(20, 20, 20); */
+    z-index: -1;
+
+}
+
+
+.spin
+{
+    font-size: 100px;
+    animation: spin 3s alternate infinite;
+    /* animation-delay: 220s; */
+}
+
+.deco .spin 
+{
+    margin-inline: 4rem;
+
+}
+
+@keyframes spin
+{
+    0%
+    {
+        transform: rotate(30deg);
+    }
+    50%
+    {
+        /* transform: rotate(90deg); */
+    }
+
+    100%
+    {
+        transform: rotate(-30deg);
+    }
+}
+
+.number
+{
+    top:50%;
+    z-index: -2;
+}
+
+
+.number2
+{
+    top:52%;
+
+}
+
+.number2 .spin:nth-child(1)
+{
+    background-color: green;
+    color: white;
+}
+.number2 .spin:nth-child(2)
+{
+    background-color: rgb(0, 2, 128);
+    color: red;
+    position: relative;
+
+    top:60%;
+}
+.number2 .spin:nth-child(3)
+{
+    background-color:white;
+    color: rgb(0, 2, 128);
+}
+.number2 .spin:nth-child(4)
+{
+    background-color: red;
+    color: green;
+}
+
+
+.number2 .spin
+{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgb(20, 20, 20); 
+    margin-inline: 1.5rem;
+    
+}

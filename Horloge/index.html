@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="time">
+        <div class="circle" id="circleH">
+            <div id="h">00</div>
+        </div>
+        <div class="circle" id="circleM">
+            <div id="m">00</div>
+        </div>
+        <div class="circle">
+            <div id="s">00</div>
+        </div>
+        <div id="ampm">AM</div>
+    </div>
+
+
+    <script>
+        setInterval(() => {
+            // Récupération des données HTML dans des variables
+        let h = document.getElementById('h');
+        let m = document.getElementById('m');
+        let s = document.getElementById('s');
+        let am = document.getElementById('ampm');
+
+        // Récupération d'heure dans des variables à afficher
+        let hours, minutes, seconds;
+        h.innerText = hours = new Date().getHours();
+        m.innerText = minutes = new Date().getMinutes();
+        s.innerText = seconds = new Date().getSeconds();  
+          
+        // Changer AM en PM quand l'heure sera supérieur ou égale à 12h
+        (hours >= 12) ? am.innerText = 'PM' : am.innerText = 'AM';
+
+        // Ajouter 0 derrière le chiffre qui ce sera moins de 10
+        (hours < 10) ? h.innerText = '0' + hours : h.innerText = hours;
+        (minutes < 10) ? m.innerText = '0' + minutes : m.innerText = minutes;
+        (seconds < 10) ? s.innerText = '0' + seconds : s.innerText = seconds;
+        
+        let circleM = document.getElementById('circleM');
+
+
+        if (seconds < 50){
+            circleM.style.transform = 'translate: -100px';
+        }
+        else if(seconds > 50)
+        {
+            circleM.style.transform = 'translate: 250px 20px';
+
+        }
+
+        });
+        
+
+    </script>
+</body>
+</html>
